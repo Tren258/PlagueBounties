@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="plague.css">
+    <title>Plägue - Bounty Hub</title>
+    <style> 
+        /* General Styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-y: auto;
+            background: linear-gradient(145deg, #0b0b0b, #1a0000);
+            font-family: 'Courier New', monospace;
+            color: #e0e0e0;
+            animation: flicker 3s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                opacity: 0.8;
+            }
+        }
+
+        header {
+            background: radial-gradient(circle, #1a0000, #000);
+            color: #ff4444;
+            text-align: center;
+            padding: 40px 20px;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #990000;
+        }
+        header h1 {
+            font-size: 4em;
+            margin: 0;
+            font-family: 'Impact', sans-serif;
+            letter-spacing: 3px;
+            animation: headerGlow 2s infinite alternate;
+        }
+        header p {
+            font-size: 1.5em;
+            margin-top: 15px;
+        }
+
+        @keyframes headerGlow {
+            from {
+                text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4444;
+            }
+            to {
+                text-shadow: 0 0 15px #ff4444, 0 0 30px #ff8888;
+            }
+        }
+
+        .bounty-section {
+            padding: 30px;
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #111;
+            border: 1px solid #550000;
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        .bounty-section h2 {
+            color: #ff4444;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #aa0000;
+        }
+        .bounty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #1a0000;
+            border: 2px dashed #770000;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+            transform: scale(1);
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+        }
+        .bounty:hover {
+            transform: scale(1.05);
+            background-color: #220000;
+            box-shadow: 0 0 30px rgba(255, 50, 50, 0.9);
+        }
+        .bounty img {
+            width: 120px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .bounty h3 {
+            font-size: 1.8em;
+            color: #ffaaaa;
+            text-shadow: 0 0 5px #ffaaaa, 0 0 10px #ff0000;
+        }
+        .bounty p {
+            font-size: 1.2em;
+            color: #e0e0e0;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            color: #ff4444;
+            background-color: #000;
+            border: none;
+            cursor: pointer;
+        }
+        .lightbox-close:hover {
+            color: #ff8888;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #0b0000;
+            color: #990000;
+            font-size: 0.9em;
+            text-shadow: 0 0 5px #770000;
+        }
+        footer a {
+            color: #ff4444;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Top Info Styles */
+        .top-info {
+            text-align: center;
+            background: #220000;
+            color: #ffaaaa;
+            padding: 10px 0;
+            font-size: 0.9em;
+            border-bottom: 1px solid #550000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Info Section -->
+    <div class="top-info">
+        <p>Made by Tren "The Plug" Reinhold. DM theman062858 for requests.</p>
+    </div>
+
+    <header>
+        <h1>Plägue Bounty Hub</h1>
+        <p>Mighty Omega #1 ORG.</p>
+    </header>
+
+    <section class="bounty-section">
+        <h2>Active Bounties</h2>
+
+        <!-- Bounty 1 -->
+        <div class="bounty">
+            <a href="javascript:void(0);" onclick="openLightbox('bounty1.jpg')">
+                <img src="bounty1.jpg" alt="Target Zach">
+            </a>
+            <h3>Target: Zach</h3>
+            <p>Bounty: One Million Mighty Omega Cash</p>
+        </div>
+
+        <!-- Bounty 2 - Pandae Ohn (BobsledsStrongest) -->
+        <div class="bounty">
+            <a href="javascript:void(0);" onclick="openLightbox('pandae_ohn.jpg')">
+                <img src="pandae_ohn.jpg" alt="Pandae Ohn">
+            </a>
+            <h3>Target: Pandae Ohn (BobsledsStrongest)</h3>
+            <p>Bounty: 50,000 Mighty Omega Cash</p>
+        </div>
+
+        <!-- More bounties can be added here -->
+    </section>
+
+    <!-- Lightbox (Zoomed Image) -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox(event)">X</button>
+        <img id="lightbox-img" src="" alt="Zoomed Image">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Plägue. All Rights Reserved. | <a href="https://discord.gg/yj4qdPzxpw" target="_blank">Join us</a></p>
+    </footer>
+
+    <script>
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightbox.style.display = 'flex';
+            lightboxImg.src = imageSrc;
+        }
+
+        function closeLightbox(event) {
+            event.stopPropagation();
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

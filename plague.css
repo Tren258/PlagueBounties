@@ -1,0 +1,169 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #0a0a0a; /* Deep black background */
+    color: #d1d1d1; /* Subtle grey text for readability */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Links */
+a {
+    color: #32ff7e; /* Neon green */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 5px rgba(50, 255, 126, 0.8), 0 0 15px rgba(50, 255, 126, 0.5);
+}
+
+a:hover {
+    color: #ff003c; /* Blood red hover */
+    text-shadow: 0 0 10px rgba(255, 0, 60, 0.8), 0 0 20px rgba(255, 0, 60, 0.6);
+}
+
+/* Particle Effects in Background */
+.background::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://via.placeholder.com/150'); /* Replace with subtle particle texture */
+    opacity: 0.05; /* Low opacity for subtle effect */
+    z-index: -2;
+}
+
+/* Background Animation */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000, #002200); /* Dark green and black */
+    z-index: -1;
+    animation: backgroundFlicker 20s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundFlicker {
+    0% { background: linear-gradient(135deg, #121212, #003300); }
+    50% { background: linear-gradient(135deg, #002200, #5a0000); } /* Blood red hint */
+    100% { background: linear-gradient(135deg, #121212, #003300); }
+}
+
+/* Header Section */
+header {
+    padding: 100px 20px;
+    text-align: center;
+    z-index: 1;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 4.5em;
+    color: #32ff7e; /* Neon Green */
+    text-shadow: 0 0 25px rgba(50, 255, 126, 0.9), 0 0 50px rgba(50, 255, 126, 0.7);
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    animation: textFlicker 3s infinite, glitch 1s infinite;
+}
+
+header p {
+    font-size: 1.6em;
+    color: #e1e1e1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* Text Flicker Effect */
+@keyframes textFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { text-shadow: 0 0 25px rgba(50, 255, 126, 0.9), 0 0 50px rgba(50, 255, 126, 0.7); }
+    20%, 24%, 55% { text-shadow: 0 0 5px rgba(50, 255, 126, 0.4); }
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+    0% { text-shadow: 2px 0 red, -2px 0 blue; transform: translate(0); }
+    25% { text-shadow: -2px 0 red, 2px 0 blue; transform: translate(-2px, 2px); }
+    50% { text-shadow: 2px 0 red, -2px 0 blue; transform: translate(2px, -2px); }
+    75% { text-shadow: -2px 0 red, 2px 0 blue; transform: translate(-2px, -2px); }
+    100% { text-shadow: 2px 0 red, -2px 0 blue; transform: translate(0); }
+}
+
+/* Section Styling */
+section {
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Section Titles */
+section h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5em;
+    color: #ff003c; /* Blood red */
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    letter-spacing: 5px;
+    text-shadow: 0 0 15px rgba(255, 0, 60, 0.8), 0 0 30px rgba(255, 0, 60, 0.6);
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Bounty Card Styling */
+.card {
+    background: rgba(0, 0, 0, 0.85); /* Darker background */
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.6), 0 0 20px rgba(50, 255, 126, 0.4);
+    margin: 20px auto;
+    position: relative;
+    max-width: 600px;
+    z-index: 1;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    animation: cardPulse 3s infinite;
+}
+
+@keyframes cardPulse {
+    0% { box-shadow: 0 10px 50px rgba(0, 0, 0, 0.6), 0 0 20px rgba(50, 255, 126, 0.4); }
+    50% { box-shadow: 0 15px 70px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 0, 60, 0.4); }
+    100% { box-shadow: 0 10px 50px rgba(0, 0, 0, 0.6), 0 0 20px rgba(50, 255, 126, 0.4); }
+}
+
+.card:hover {
+    transform: rotate(-2deg) scale(1.02); /* Subtle eerie hover */
+}
+
+/* Buttons */
+.cta-btn {
+    background: linear-gradient(135deg, #32ff7e, #00ff47);
+    color: #121212;
+    padding: 18px 40px;
+    font-size: 1.6em;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 30px;
+    transition: transform 0.4s, box-shadow 0.4s ease;
+    box-shadow: 0 0 20px rgba(50, 255, 126, 0.5);
+    animation: buttonPulse 3s infinite;
+}
+
+.cta-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 0 40px rgba(50, 255, 126, 0.7);
+    animation: none;
+}
+
+@keyframes buttonPulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(50, 255, 126, 0.5); }
+    50% { box-shadow: 0 0 30px rgba(50, 255, 126, 0.8); }
+}

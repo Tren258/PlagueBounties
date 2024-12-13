@@ -15,7 +15,7 @@
             background: linear-gradient(145deg, #0b0b0b, #1a0000);
             font-family: 'Courier New', monospace;
             color: #e0e0e0;
-            animation: flicker 3s infinite;
+        
         }
 
         @keyframes flicker {
@@ -39,11 +39,14 @@
             margin: 0;
             font-family: 'Impact', sans-serif;
             letter-spacing: 3px;
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4444;
             animation: headerGlow 2s infinite alternate;
         }
         header p {
             font-size: 1.5em;
             margin-top: 15px;
+            color: #ff4444;
         }
 
         @keyframes headerGlow {
@@ -284,29 +287,24 @@
     </section>
 
     <!-- Lightbox (Zoomed Image) -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <button class="lightbox-close" onclick="closeLightbox(event)">X</button>
-        <img id="lightbox-img" src="" alt="Zoomed Image">
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">X</button>
+        <img id="lightbox-img" src="" alt="Lightbox Image">
     </div>
 
     <footer>
-        <p>&copy; 2024 Plägue. All Rights Reserved. | <a href="https://discord.gg/yj4qdPzxpw" target="_blank">Join us</a></p>
+        <p>&copy; 2024 Plägue Bounty Hub. All rights reserved. Contact for more info.</p>
     </footer>
 
     <script>
-        function openLightbox(imageSrc) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightbox.style.display = 'flex';
-            lightboxImg.src = imageSrc;
+        function openLightbox(imgSrc) {
+            document.getElementById("lightbox-img").src = imgSrc;
+            document.getElementById("lightbox").style.display = "flex";
         }
 
-        function closeLightbox(event) {
-            event.stopPropagation();
-            const lightbox = document.getElementById('lightbox');
-            lightbox.style.display = 'none';
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
         }
     </script>
-
 </body>
 </html>

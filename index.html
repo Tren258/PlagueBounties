@@ -15,16 +15,6 @@
             background: linear-gradient(145deg, #0b0b0b, #1a0000);
             font-family: 'Courier New', monospace;
             color: #e0e0e0;
-        
-        }
-
-        @keyframes flicker {
-            0%, 18%, 22%, 25%, 53%, 57%, 100% {
-                opacity: 1;
-            }
-            20%, 24%, 55% {
-                opacity: 0.8;
-            }
         }
 
         header {
@@ -93,14 +83,6 @@
             background-color: #220000;
             box-shadow: 0 0 30px rgba(255, 50, 50, 0.9);
         }
-        .bounty img {
-            width: 120px;
-            height: auto;
-            border-radius: 5px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
         .bounty h3 {
             font-size: 1.8em;
             color: #ffaaaa;
@@ -112,43 +94,20 @@
             text-align: center;
             margin-top: 5px;
         }
-
-        /* Lightbox Styles */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            animation: fadeIn 0.3s ease-in-out;
+        .bounty a {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #770000;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .lightbox img {
-            max-width: 90%;
-            max-height: 80%;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 2em;
-            color: #ff4444;
-            background-color: #000;
-            border: none;
-            cursor: pointer;
-        }
-        .lightbox-close:hover {
-            color: #ff8888;
+        .bounty a:hover {
+            background-color: #ff4444;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
         }
 
         footer {
@@ -196,105 +155,30 @@
 
         <!-- Bounty 1 -->
         <div class="bounty">
-    <a href="javascript:void(0);" onclick="openLightbox('bounty3.jpg')">
-        <img src="bounty3.jpg" alt="Target destro244">
-    </a>
-    <h3>Target: destro244</h3>
-    <p>Bounty: 100K if u grip. Contact CBLU ohn personally with proof.</p>
-</div>
-
-        <!-- Bounty 2 - Pandae Ohn (BobsledsStrongest) -->
-        <div class="bounty">
-            <a href="javascript:void(0);" onclick="openLightbox('bounty11.jpg')">
-                <img src="bounty11.jpg" alt="Target">
-            </a>
-            <h3>Target: TBD</h3>
-            <p>Bounty: ??? MO Cash</p>
-        </div>
-        <!-- Bounty 4 -->
-        <div class="bounty">
-            <a href="javascript:void(0);" onclick="openLightbox('bounty3.jpg')">
-                <img src="bounty4.jpg" alt="Target">
-            </a>
-            <h3>Target: TBD</h3>
-            <p>Bounty: ??? MO Cash</p>
+            <h3>Target: destro244</h3>
+            <p>Bounty: 100K if u grip. Applies ONCE (DM cblu ohn with proof).</p>
+            <a href="https://www.roblox.com/users/198361863/profile" target="_blank">View Profile</a>
         </div>
 
-        <!-- Bounty 5 -->
+        <!-- Bounty 2 -->
         <div class="bounty">
-            <a href="javascript:void(0);" onclick="openLightbox('bounty4.jpg')">
-                <img src="bounty5.jpg" alt="Target ">
-            </a>
-            <h3>Target: TBD</h3>
-            <p>Bounty: ??? MO Cash</p>
+            <h3>Target: sekiriosu5</h3>
+            <p>Bounty: 10K/grip (Send proof in my DMs).</p>
+            <a href="https://www.roblox.com/users/2551986297/profile" target="_blank">View Profile</a>
         </div>
 
-        <!-- Bounty 6 -->
+        <!-- Bounty 3 -->
         <div class="bounty">
-            <a href="javascript:void(0);" onclick="openLightbox('bounty5.jpg')">
-                <img src="bounty6.jpg" alt="Target ">
-            </a>
-            <h3>Target: TBD</h3>
-            <p>Bounty: ??? MO Cash</p>
-        </div>
-
-        <!-- Bounty 7 -->
-        <div class="bounty">
-            <a href="javascript:void(0);" onclick="openLightbox('bounty6.jpg')">
-                <img src="bounty7.jpg" alt="Target ">
-            </a>
-            <h3>Target: TBD</h3>
-            <p>Bounty: ??? MO Cash</p>
-        </div>
-
-        <!-- Bounty 8 -->
-        <div class="bounty">
-            <a href="javascript:void(0);" onclick="openLightbox('bounty7.jpg')">
-                <img src="bounty8.jpg" alt="Target ">
-            </a>
-            <h3>Target: TBD</h3>
-            <p>Bounty: ??? MO Cash</p>
-        </div>
-
-        <!-- Bounty 9 -->
-        <div class="bounty">
-            <a href="javascript:void(0);" onclick="openLightbox('bounty8.jpg')">
-                <img src="bounty9.jpg" alt="Target ">
-            </a>
-            <h3>Target: TBD</h3>
-            <p>Bounty: ??? MO Cash</p>
-        </div>
-
-        <!-- Bounty 10 -->
-        <div class="bounty">
-            <a href="javascript:void(0);" onclick="openLightbox('bounty9.jpg')">
-                <img src="bounty10.jpg" alt="Target ">
-            </a>
-            <h3>Target: TBD</h3>
-            <p>Bounty: ??? MO Cash</p>
+            <h3>Target: FNTZuher</h3>
+            <p>Bounty: 10K/grip (Send proof in my DMs).</p>
+            <a href="https://www.roblox.com/users/164060634/profile" target="_blank">View Profile</a>
         </div>
 
     </section>
-
-    <!-- Lightbox (Zoomed Image) -->
-    <div id="lightbox" class="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()">X</button>
-        <img id="lightbox-img" src="" alt="Lightbox Image">
-    </div>
 
     <footer>
         <p>&copy; 2024 Plägue Bounty Hub. All rights reserved. Contact for more info.</p>
     </footer>
 
-    <script>
-        function openLightbox(imgSrc) {
-            document.getElementById("lightbox-img").src = imgSrc;
-            document.getElementById("lightbox").style.display = "flex";
-        }
-
-        function closeLightbox() {
-            document.getElementById("lightbox").style.display = "none";
-        }
-    </script>
 </body>
 </html>
